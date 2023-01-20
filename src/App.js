@@ -19,7 +19,4 @@ function App() {
    
   );
 }
-//770990338963-uqfh2ked6ijqsch9inpv8b4dd852bo4u.apps.googleusercontent.com client id
-
-//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 client secret
 export default App;
