@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import {useForm } from  'react-hook-form'
-
+import { loginUser } from '../../api/user'
 //to validate username
 const usernameConfig = {
     required: true,
@@ -13,11 +14,15 @@ const LoginForm = () => {
         formState: {errors}
     } = useForm()
 
-    const onSubmit = (data) => {
-        console.log(data)
-        console.log(errors)
+    const [loading, setLoading] =useState(false)
 
-    }
+    const onSubmit = async ({username}) => {
+        setLoading(true)
+        const [error, user] = await loginUser(username)
+        console.log(2 + error)
+        console.log(1 + user)
+        setLoading(false)
+    };
     //Errormessage function to show user username problems
     const errorMessage = (() => {
         if (!errors.username){
@@ -45,7 +50,8 @@ const LoginForm = () => {
                     {errorMessage}
                 </fieldset>
                 
-                <button type='submit'>Continue</button>
+                <button type='submit' disabled={loading}>Continue</button>
+                {loading && <p>Logging in ...</p>}
             </form>
         </>
     )
