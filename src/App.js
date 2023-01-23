@@ -1,22 +1,20 @@
-import { useState } from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Login from "./views/Login";
-import Orders from "./views/Translation";
+import Translate from "./views/Translation";
 import Profile from "./views/Profile";
 function App() {
-  const key = process.env.REACT_APP_API_KEY;
+  
   return (
- 
-      <div className="App">
-        <Outlet />
+        <BrowserRouter>
+        <div className="App">
         <Routes>
           <Route path="/" exact element={<Login />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="/translate" element={<Translate />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-      </div>
-   
+        </div>
+        </BrowserRouter>
   );
 }
 export default App;
