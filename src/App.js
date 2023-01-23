@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Login from "./views/Login";
-import Translate from "./views/Translation";
+import Translate from "./views/Translate";
 import Profile from "./views/Profile";
 function App() {
   
