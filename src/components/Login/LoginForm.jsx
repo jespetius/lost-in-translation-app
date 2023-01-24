@@ -1,6 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {useForm } from  'react-hook-form'
 import { loginUser } from '../../api/user'
+import { storageSave } from '../../utils/storage'
+import { useNavigate } from 'react-router-dom';
+import { STORAGE_KEY_USER } from '../../const/storageKeys';
+import { useUser } from '../../context/UserContext';
+
 //to validate username
 const usernameConfig = {
     required: true,
@@ -14,15 +19,43 @@ const LoginForm = () => {
         formState: {errors}
     } = useForm()
 
+    const {user , setUser} = useUser()
+    //to navigate users
+    const navigate = useNavigate()
+    //while fetching, creating loading "screen"
     const [loading, setLoading] =useState(false)
+    //api errors
+    const [ apiError, setApiError] = useState(null)
 
-    const onSubmit = async ({username}) => {
-        setLoading(true)
-        const [error, user] = await loginUser(username)
-        console.log(2 + error)
-        console.log(1 + user)
+    useEffect(() => {
+        //found user, redirect to Profile page
+        if (user !== null){
+            navigate('profile')
+        }
+       console.log('user has changed', user)
+
+    }, [user, navigate])
+
+    //submit action
+    const onSubmit =  async ({username}) =>{
+        //turn on loading features
+        setLoading(true);
+        const [error, userResponse] = await loginUser(username)
+        //if error found, set error as apierror
+        if (error!==null) {
+            setApiError(error)
+        }
+        //if getting response back, save user key and set user
+        if (userResponse !== null) {
+            //save key
+            storageSave(STORAGE_KEY_USER, userResponse)
+            //set user
+            setUser(userResponse)
+        }
+        //turn off loading features
         setLoading(false)
     };
+  
     //Errormessage function to show user username problems
     const errorMessage = (() => {
         if (!errors.username){
@@ -39,7 +72,7 @@ const LoginForm = () => {
     })()
 
 
-
+    //returning form
     return (
         <>
             <h2> What's your name?</h2>
@@ -52,6 +85,7 @@ const LoginForm = () => {
                 
                 <button type='submit' disabled={loading}>Continue</button>
                 {loading && <p>Logging in ...</p>}
+                { apiError && <p>{ apiError }</p>}
             </form>
         </>
     )
