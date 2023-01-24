@@ -1,6 +1,18 @@
-const ProfileTranslationHistory =() => {
+import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem"
+
+const ProfileTranslationHistory =( {translations}) => {
+
+    const translationList = translations.map(
+        (translation, index) => <ProfileTranslationHistoryItem key = {index + '-' +translation} translation = { translation }/>
+    )
+
     return (
-        <p>Translation History</p>
+        <section>
+            <h4>Your translation history</h4>
+            <ul>
+                { translationList }
+            </ul>
+        </section>
     )
 }
 

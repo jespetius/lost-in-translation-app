@@ -1,6 +1,8 @@
-const ProfileHeader =() => {
+const ProfileHeader =({username}) => {
     return (
-        <p>Header</p>
+        <header>
+            <h4>Hello, welcome back {username}</h4>
+        </header>
     )
 }
 
