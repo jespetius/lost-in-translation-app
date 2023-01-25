@@ -1,27 +1,30 @@
-import { NavLink } from "react-router-dom"
+
 import { useUser } from "../../context/UserContext"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const NavBar = () => {
     
     const { user } = useUser()
 
     return (
-        <nav>
-            <ul>
-                <li>Translator</li>
-            </ul>
+        <>
+        <Navbar bg="primary" variant="dark">
+        <Container>
+          <Navbar.Brand>Lost In Translation</Navbar.Brand>
+          { user !== null &&
+          
+          <Nav className="me-auto">
+            <Nav.Link href="/profile">Profile</Nav.Link>
+            <Nav.Link href="/translate">Translate</Nav.Link>
+          </Nav>
+}
+        </Container>
+      </Navbar>
+        
+        </>
 
-            { user !== null &&
-            <ul>
-                <li>
-                <NavLink to="/translate">Translate</NavLink>
-                </li>
-                <li>
-                    <NavLink to ="/profile">Profile</NavLink>
-                </li>
-            </ul>
-            }
-        </nav>
-    )
+        )
 }
 export default NavBar

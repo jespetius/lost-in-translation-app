@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AppContext from './context/AppContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const rootElement = document.getElementById("root");
