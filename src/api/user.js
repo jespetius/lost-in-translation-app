@@ -40,7 +40,7 @@ const createUser = async (username) => {
     }
 }
 
-
+//checking if user allready exist
 export const loginUser = async (username) => {
     const [checkError, user ] = await checkForUser(username)
     
@@ -51,6 +51,6 @@ export const loginUser = async (username) => {
     if (user.length > 0) {
         return [null, user.pop()]
     }
-
+    //make new user if dont find user from array
     return await createUser(username)
 }

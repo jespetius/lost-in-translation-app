@@ -11,7 +11,7 @@ const usernameConfig = {
     required: true,
     minLength: 5
 }
-
+//creating LoginForm component
 const LoginForm = () => {
     const {
         register,

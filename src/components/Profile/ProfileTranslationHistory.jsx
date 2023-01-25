@@ -1,7 +1,7 @@
 import ProfileTranslationHistoryItem from "./ProfileTranslationHistoryItem"
-
+//to list users translations to the profilepage
 const ProfileTranslationHistory =( {translations}) => {
-
+    //mapping translations
     const translationList = translations.map(
         (translation, index) => <ProfileTranslationHistoryItem key = {index + '-' +translation} translation = { translation }/>
     )

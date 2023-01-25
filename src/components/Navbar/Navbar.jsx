@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 const NavBar = () => {
-    
+    //to get current user and check if user are allowed to see all nav buttons
     const { user } = useUser()
 
     return (
