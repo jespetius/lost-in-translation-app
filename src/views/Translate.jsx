@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { addTranslation } from "../api/translation";
 import TranslationForm from "../components/Translations/TranslationForm";
-
-
-import { STORAGE_KEY_USER } from "../const/storageKey";
-import { TRANSLATION } from "../const/translations";
+import { STORAGE_KEY_USER } from "../const/storageKeys";
+import { TRANSLATION } from "../const/translationData"
 import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
 import { storageSave } from "../utils/storage";
+
 const Translate = () => {
   //this handles the values
 
