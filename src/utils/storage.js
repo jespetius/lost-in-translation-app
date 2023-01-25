@@ -1,17 +1,26 @@
+const validateKey = key => {
+  if (!key || typeof key !== "string") {
+    throw new Error("storage.js : INVALID KEY PROVIDED");
+  }
+};
+
 //function to save storagekey
 export const storageSave = (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value))
-}
+  validateKey(key);
+  localStorage.setItem(key, JSON.stringify(value));
+};
 //to read storagekey
 export const storageRead = key => {
-    const data = localStorage.getItem(key)
-    if (data){
-        return JSON.parse(data)
-    }
+  validateKey(key);
+  const data = localStorage.getItem(key);
+  if (data) {
+    return JSON.parse(data);
+  }
 
-    return null
-}
+  return null;
+};
 //to delete key
 export const storageDelete = key => {
-    localStorage.removeItem(key)
-}
+  validateKey(key);
+  localStorage.removeItem(key);
+};
