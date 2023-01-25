@@ -33,7 +33,7 @@ const Translate = () => {
     console.log("err ", error);
     console.log("result ", updatedUser);
   };
-  const CreateImages = () => images.map((img, index) => <img key={index} src={`/individial_signs/${img}`} alt={img} height="50" />);
+  const CreateImages = () => images.map((img, index) => <img key={index} src={`/resources/LostInTranslation_Resources/individial_signs/${img}`} alt={img} height="50" />);
   return (
     <div className="translation-form">
       <TranslationForm handleUserInput={handleUserInput} />
