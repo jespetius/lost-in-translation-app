@@ -81,7 +81,7 @@ const LoginForm = () => {
         <>
             <h3> What's your name?</h3>
             <Form onSubmit={handleSubmit(onSubmit)}>
-                <Form.Group className="mb-3" controlId="loginForm">
+                <Form.Group className="mb-3">
                     <Form.Label htmlFor='username'>Username:</Form.Label>
                     <input type="text" placeholder='JohnDoe' {...register("username", usernameConfig)} />
                     {errorMessage}
