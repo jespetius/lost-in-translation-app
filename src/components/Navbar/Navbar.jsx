@@ -10,9 +10,9 @@ const NavBar = () => {
 
     return (
         <>
-        <Navbar bg="primary" variant="dark">
+        <Navbar bg="warning" variant="light">
         <Container>
-          <Navbar.Brand>Lost In Translation</Navbar.Brand>
+          <Navbar.Brand className='text-dark' >Lost In Translation</Navbar.Brand>
           { user !== null &&
           
           <Nav className="me-auto">
