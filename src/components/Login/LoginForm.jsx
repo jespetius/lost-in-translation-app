@@ -5,6 +5,10 @@ import { storageSave } from '../../utils/storage'
 import { useNavigate } from 'react-router-dom';
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
 import { useUser } from '../../context/UserContext';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { Spinner } from 'react-bootstrap';
+
 
 //to validate username
 const usernameConfig = {
@@ -75,18 +79,18 @@ const LoginForm = () => {
     //returning form
     return (
         <>
-            <h2> What's your name?</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset>
-                    <label htmlFor='username'>Username:</label>
+            <h3> What's your name?</h3>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+                <Form.Group className="mb-3" controlId="loginForm">
+                    <Form.Label htmlFor='username'>Username:</Form.Label>
                     <input type="text" placeholder='JohnDoe' {...register("username", usernameConfig)} />
                     {errorMessage}
-                </fieldset>
+                </Form.Group>
+                {loading ? <Spinner animation="border" variant="warning" />: <Button type='submit' variant="warning" disabled={loading}>Continue</Button>}
                 
-                <button type='submit' disabled={loading}>Continue</button>
-                {loading && <p>Logging in ...</p>}
+                
                 { apiError && <p>{ apiError }</p>}
-            </form>
+            </Form>
         </>
     )
 }

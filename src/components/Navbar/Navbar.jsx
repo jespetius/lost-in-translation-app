@@ -3,6 +3,8 @@ import { useUser } from "../../context/UserContext"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import {LinkContainer} from 'react-router-bootstrap'
+
 
 const NavBar = () => {
     //to get current user and check if user are allowed to see all nav buttons
@@ -16,8 +18,12 @@ const NavBar = () => {
           { user !== null &&
           
           <Nav className="me-auto">
-            <Nav.Link href="/profile">Profile</Nav.Link>
-            <Nav.Link href="/translate">Translate</Nav.Link>
+            <LinkContainer to="/profile">
+                <Nav.Link>Profile</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/translate">
+                <Nav.Link>Translate</Nav.Link>
+            </LinkContainer>
           </Nav>
 }
         </Container>
