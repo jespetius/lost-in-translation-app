@@ -9,12 +9,11 @@ const ProfileTranslationHistory = ({ translations }) => {
 
   //if no texts then display empty p else show 10 latest posts
   return (
-    <section>
-      <h4>Your translation history</h4>
+    <section className="translation-items-section">
+      <h4 className="translation-items-section-title">Your translation history</h4>
       {translationList.length === 0 && <p>Your translations seems empty... 🕸</p>}
       <ul>{translationList}</ul>
     </section>
   );
 };
-
 export default ProfileTranslationHistory;

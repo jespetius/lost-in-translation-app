@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Alert, Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 //! ------------------------ states
@@ -16,7 +17,7 @@ function TranslationForm({ handleUserInput }) {
       setTextError(true);
       setTimeout(() => {
         setTextError(false);
-      }, 3000);
+      }, 2000);
 
       return;
     }
@@ -26,15 +27,15 @@ function TranslationForm({ handleUserInput }) {
 
   //ternary for error
   return (
-    <div className="translation-card container">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="What word to translate?" {...register("translate")} />
-        <button  type="submit">
-          submit
-        </button>
-
-        {textError && <p>Your text must only contain letters ☢ </p>}
-      </form>
+    <div className="translation-input-form container">
+      <Form className="translation-card-form" onSubmit={handleSubmit(onSubmit)}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Translate</Form.Label>
+          <Form.Control type="text" autoFocus placeholder="What word to translate?" {...register("translate")} />
+        </Form.Group>
+        {!textError ? <Button type="submit" className="translation-card-button" variant="warning" size="md" active>Submit</Button> : 
+        <Alert className="translation-card-text" variant="danger">Your text must only contain letters ☢</Alert>}
+      </Form>
     </div>
   );
 }
