@@ -52,5 +52,9 @@
   "bugs": {
     "url": "https://github.com/jespetius/lost-in-translation-app/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://localhost:3000"
+=======
+  "homepage": "http://localhost:3000/"
+>>>>>>> error-handles
 }

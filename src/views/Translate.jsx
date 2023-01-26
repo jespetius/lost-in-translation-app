@@ -2,7 +2,7 @@ import { useState } from "react";
 import { addTranslation } from "../api/translation";
 import TranslationForm from "../components/Translations/TranslationForm";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
-import { TRANSLATION } from "../const/translationData"
+import { TRANSLATION } from "../const/translationData";
 import { useUser } from "../context/UserContext";
 import withAuth from "../hoc/withAuth";
 import { storageSave } from "../utils/storage";
@@ -15,7 +15,10 @@ const Translate = () => {
   //states
   const [translationText, setTranslationText] = useState(null);
 
+  //check if contains numbers
+
   //translationtext is string user gave
+  //then update states and also creatArr that shapes the data to our bidding
   const handleUserInput = async translationText => {
     setTranslationText(translationText);
     const createArr = translationText.toLowerCase().replace(/\s/g, "").split("");
@@ -37,7 +40,8 @@ const Translate = () => {
   return (
     <div className="translation-form">
       <TranslationForm handleUserInput={handleUserInput} />
-      <h4>result:</h4>
+
+      {translationText && <h4>result:</h4>}
       {translationText && <p>word is {translationText}</p>}
       {images && <CreateImages />}
     </div>
