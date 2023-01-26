@@ -34,7 +34,7 @@ const LoginForm = () => {
     useEffect(() => {
         //found user, redirect to Profile page
         if (user !== null){
-            navigate('profile')
+            navigate('translate')
         }
        console.log('user has changed', user)
 
