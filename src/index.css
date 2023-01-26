@@ -29,6 +29,10 @@ code {
   text-align: center;
 }
 
+.login {
+  text-align: center;
+}
+
 .profile-buttons {
   text-align: center;
 }
@@ -50,3 +54,4 @@ code {
   border-radius: 4px;
   border: 1px solid black;
 }
+
