@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.translation-list {
+  margin-right:auto;
+    margin-left:auto;
+  background-color: whitesmoke;
+  margin-top: 15px;
+  height:fit-content;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid gainsboro;
+  text-align: center;
+  width: 500px;
+}
+
+.header {
+  text-align: center;
+}
+
+.profile-buttons {
+  text-align: center;
+}
+
+
+.logout-btn {
+  background-color: red;
+  color: black;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid black;
+  margin: 15px;
+}
+
+.clear-history-btn {
+  background-color: rgba(255, 255, 255, 0.815);
+  color: black;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid black;
+}

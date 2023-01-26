@@ -24,7 +24,12 @@ const NavBar = () => {
             <LinkContainer to="/translate">
                 <Nav.Link>Translate</Nav.Link>
             </LinkContainer>
+            <LinkContainer className="justify-content-end" to="/profile">
+              <Nav.Link>Signed in as: {user.username}</Nav.Link>
+            </LinkContainer>
           </Nav>
+          
+
 }
         </Container>
       </Navbar>

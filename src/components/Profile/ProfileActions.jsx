@@ -1,8 +1,6 @@
 import { STORAGE_KEY_USER } from '../../const/storageKeys';
 import { useUser } from '../../context/UserContext';
 import { storageDelete, storageSave} from '../../utils/storage';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { ClearTranslationHistory } from '../../api/translation';
 
 //profile actions
@@ -38,10 +36,12 @@ const ProfileActions = () => {
       };
     //return user action buttons
     return (
-        <ButtonGroup vertical>
-            <Button variant="danger" onClick={clearHistory}>Clear History</Button>
-            <Button variant="danger"  onClick={ handleLogoutClick}>Log Out</Button>
-            </ButtonGroup>
+      <>
+        <div class="profile-buttons">
+            <button class="clear-history-btn" onClick={clearHistory}>Clear History</button>
+            <button class="logout-btn" onClick={ handleLogoutClick}>Log Out</button>
+            </div>
+      </>
     )
 }
 export default ProfileActions

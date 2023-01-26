@@ -1,6 +1,9 @@
+import { ListGroup } from "react-bootstrap"
+
+
 const ProfileTranslationHistoryItem = ( { translation }) => {
     //return translation item
-    return <li>{translation}</li>
+    return   <ListGroup.Item as="li">{translation}</ListGroup.Item>
 }
 
 export default ProfileTranslationHistoryItem
