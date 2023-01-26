@@ -39,7 +39,6 @@ const ProfileActions = () => {
     //return user action buttons
     return (
         <ButtonGroup vertical>
-            <Button variant="warning" href='/translate'>Translate</Button>
             <Button variant="danger" onClick={clearHistory}>Clear History</Button>
             <Button variant="danger"  onClick={ handleLogoutClick}>Log Out</Button>
             </ButtonGroup>
