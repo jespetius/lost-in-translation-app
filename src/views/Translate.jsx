@@ -40,10 +40,9 @@ const Translate = () => {
   return (
     <div className="translation-form">
       <TranslationForm handleUserInput={handleUserInput} />
+      <div className="translation-form-text">{translationText && <h4 className="trasnlation-form-result-title">result: {translationText}</h4>}</div>
 
-      {translationText && <h4>result:</h4>}
-      {translationText && <p>word is {translationText}</p>}
-      {images && <CreateImages />}
+      <div className="translation-form-images">{images && <CreateImages />}</div>
     </div>
   );
 };
