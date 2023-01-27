@@ -29,6 +29,10 @@ code {
   text-align: center;
 }
 
+.navbar-right{
+  margin-right: 15px;
+}
+
 .login {
   text-align: center;
 }

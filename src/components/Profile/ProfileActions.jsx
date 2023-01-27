@@ -14,7 +14,7 @@ const ProfileActions = () => {
             setUser(null)
         }
     }
-
+    //clearing translatehistory from API
     const clearHistory = async () => {
         if (!window.confirm("Are you sure?\n this can not be undone")) {
           return;
@@ -30,16 +30,16 @@ const ProfileActions = () => {
           translations: []
         };
     
-        console.log(updatedUser);
+        
         storageSave(STORAGE_KEY_USER, updatedUser);
         setUser(updatedUser);
       };
     //return user action buttons
     return (
       <>
-        <div class="profile-buttons">
-            <button class="clear-history-btn" onClick={clearHistory}>Clear History</button>
-            <button class="logout-btn" onClick={ handleLogoutClick}>Log Out</button>
+        <div className="profile-buttons">
+            <button className="clear-history-btn" onClick={clearHistory}>Clear History</button>
+            <button className="logout-btn" onClick={ handleLogoutClick}>Log Out</button>
             </div>
       </>
     )

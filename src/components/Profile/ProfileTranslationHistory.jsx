@@ -10,7 +10,7 @@ const ProfileTranslationHistory = ({ translations }) => {
 
   //if no texts then display empty p else show 10 latest posts
   return (
-    <section class="translation-list">
+    <section className="translation-list">
       <h4>Your translation history</h4>
       {translationList.length === 0 && <p>Your translations seems empty... 🕸</p>}
       <ListGroup>{translationList}</ListGroup>

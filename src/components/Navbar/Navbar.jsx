@@ -17,14 +17,15 @@ const NavBar = () => {
           <Navbar.Brand className='text-dark' >Lost In Translation</Navbar.Brand>
           { user !== null &&
           
-          <Nav className="me-auto">
+          <Nav>
             <LinkContainer to="/profile">
                 <Nav.Link>Profile</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/translate">
                 <Nav.Link>Translate</Nav.Link>
             </LinkContainer>
-            <LinkContainer className="justify-content-end" to="/profile">
+            
+            <LinkContainer className="navbar-right" to="/profile">
               <Nav.Link>Signed in as: {user.username}</Nav.Link>
             </LinkContainer>
           </Nav>

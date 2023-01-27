@@ -7,7 +7,7 @@ import withAuth from "../hoc/withAuth"
 const Profile = () => {
   //get current user
   const { user } = useUser()
-
+  //retuns Profile components to Profilepage
   return (
     <>
     <ProfileHeader username = { user.username} />
