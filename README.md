@@ -13,12 +13,12 @@ Login fetch data from API and checks if user exist. If user doesn't exist, app w
 
 ## Profile
 
-<img src="public\screenshots\profile.png"/>
+<img src="public\screenshots\profile.PNG"/>
 Profile page shows users 10 latest translations and has option to clear history. Also log out button can be found from there.
 
 ## Translate
 
-<img src="public\screenshots\translate.png"/>
+<img src="public\screenshots\translate.PNG"/>
 
 In translate user input is turned to sign language and user input is stored in API. User cannot input numbers or special characters. 
 
