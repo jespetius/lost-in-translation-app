@@ -9,8 +9,8 @@ body {
   gap: 8px;
   background-color: #fef08a;
   padding: 16px;
-  width: 50%;
-  height: 80vh;
+  width: 120vh;
+  height: 90vh;
   margin: 0 auto;
   text-align: center;
   box-shadow: 2px 2px 2px black;
@@ -28,8 +28,8 @@ body {
   background-color: #fef08a;
 }
 .translation-form-images {
-  padding: 16px;
-
+  padding: 18px;
+  overflow: scroll;
   background-color: #fef08a;
 }
 .translation-form-images img {
@@ -37,24 +37,23 @@ body {
   width: 50px;
   border: 1px solid black;
   box-shadow: 2px 2px 2px black;
-  margin-right: 4px;
+  margin: 12px;
   border-radius: 10px;
 }
 .translation-form-images img:hover {
-  width: 100px;
-  height: 100px;
-  box-shadow: 4px 4px 4px black;
-  margin-right: 16px;
-  transition: 0.5s;
+  transition: 0.3s;
+  width: 55px;
+  height: 55px;
+  cursor: grab;
   background-color: #b86e2d;
 }
 
 .translation-list {
-  margin-right:auto;
-    margin-left:auto;
+  margin-right: auto;
+  margin-left: auto;
   background-color: whitesmoke;
   margin-top: 15px;
-  height:fit-content;
+  height: fit-content;
   padding: 15px;
   border-radius: 12px;
   border: 1px solid gainsboro;
@@ -74,7 +73,6 @@ body {
   text-align: center;
 }
 
-
 .logout-btn {
   background-color: red;
   color: black;
@@ -91,4 +89,3 @@ body {
   border-radius: 4px;
   border: 1px solid black;
 }
-

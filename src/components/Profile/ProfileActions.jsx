@@ -37,9 +37,9 @@ const ProfileActions = () => {
     //return user action buttons
     return (
       <>
-        <div class="profile-buttons">
-            <button class="clear-history-btn" onClick={clearHistory}>Clear History</button>
-            <button class="logout-btn" onClick={ handleLogoutClick}>Log Out</button>
+        <div className="profile-buttons">
+            <button className="clear-history-btn" onClick={clearHistory}>Clear History</button>
+            <button className="logout-btn" onClick={ handleLogoutClick}>Log Out</button>
             </div>
       </>
     )
