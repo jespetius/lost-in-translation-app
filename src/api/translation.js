@@ -5,6 +5,7 @@ const url = process.env.REACT_APP_API_URL;
 // this handles translations requests
 
 //PATCH FUNCTION > PATCH
+//add translation to API
 export const addTranslation = async (user, translation) => {
   try {
     const response = await fetch(`${url}/${user.id}`, {
@@ -23,7 +24,7 @@ export const addTranslation = async (user, translation) => {
     return [error.message, []];
   }
 };
-
+//clearing users translation history
 export const ClearTranslationHistory = async userId => {
   try {
     const response = await fetch(`${url}/${userId}`, {

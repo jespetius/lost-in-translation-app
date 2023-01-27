@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {LinkContainer} from 'react-router-bootstrap'
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 const NavBar = () => {
@@ -12,23 +13,23 @@ const NavBar = () => {
 
     return (
         <>
-        <Navbar bg="warning" variant="light">
+        <Navbar bg="warning" variant="light" expand="lg" >
         <Container>
           <Navbar.Brand className='text-dark' >Lost In Translation</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           { user !== null &&
           
-          <Nav>
-            <LinkContainer to="/profile">
-                <Nav.Link>Profile</Nav.Link>
-            </LinkContainer>
+          <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
             <LinkContainer to="/translate">
                 <Nav.Link>Translate</Nav.Link>
             </LinkContainer>
-            
-            <LinkContainer className="navbar-right" to="/profile">
-              <Nav.Link>Signed in as: {user.username}</Nav.Link>
+            <LinkContainer to="/profile">
+                <Nav.Link>{user.username}</Nav.Link>
             </LinkContainer>
+            
           </Nav>
+        </Navbar.Collapse>
           
 
 }
